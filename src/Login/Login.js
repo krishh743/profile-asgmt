@@ -1,55 +1,39 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import './Login.css';
-
-async function loginUser(credentials) {
-    return fetch('http://localhost:8080/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-    })
-        .then(data => data.json())
-}
+import React,{useState}  from 'react'
+import Data from './index.json'
+import "./Select.css";
 
 
 
-export default function Login({setToken}) {
+function Select() {
+// const[like,setLike]=useState(0)
 
-
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
-
-    const handleSubmit = async e => {
-        e.preventDefault();
-        const token = await loginUser({
-            username,
-            password
-        });
-        setToken(token);
-    }
+// function likeButton(){
+// setLike(like+1)
+// }
 
     return (
-        <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-        </div>
+        <>
+           {Data.map((post,index)=>{
+return <div className="clr"> 
+<img src="https://avatars.dicebear.com/v2/avataaars/wisetr.svg"  id="ig"/>
+<button >Like</button>
+<br/>
+ User Id :{post.id}
+<br/>
+
+Name :{post.name}
+<br/>
+  username: {post.username} 
+<br/>
+Email id: {post.email}
+<br/>
+Address: 
+City: {post.address.city} <br/>
+zipcode: {post.address.zipcode}
+</div>
+})} 
+        </>
     )
 }
 
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-};
+export default Select
