@@ -1,0 +1,19 @@
+.clr{
+
+
+float: left;
+background-color: cornflowerblue;
+width: 200px;
+height: 500px;
+border: 2px solid blue;
+
+
+}
+
+#ig{
+height: 180px;
+width: 130px;
+}
+.allDiv{
+background-color: brown;
+}
