@@ -1,6 +1,6 @@
 import React,{useState}  from 'react'
 import Data from './index.json'
-import "./Select.css";
+import "./Profile.css";
 
 
 
