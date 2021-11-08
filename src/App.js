@@ -1,12 +1,12 @@
 import React from 'react'
-import Select from './login/Select'
+import Profile from './login/Profile'
 
 
 function App() {
   return (
     <>
 
-<Select/>
+<Profile/>
     </>
   )
 }
